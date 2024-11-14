@@ -1,3 +1,56 @@
+在 Vue 项目中，如果你在启动应用时能够同时看到 `App.vue` 和 `HomeView.vue` 的页面内容，这是因为：
+
+###  **App.vue 作为根组件，HomeView.vue 作为子组件**
+
+Vue 应用通常以 `App.vue` 作为根组件启动，而 `HomeView.vue` 很可能是在 `App.vue` 中被渲染为子组件。也就是说，`App.vue` 作为整个页面的结构容器，包含了整个页面的框架布局，然后通过 Vue Router 来渲染不同的视图。 
+
+这种情况下，你可以在 `App.vue` 中看到一些全局性的内容（比如导航栏、页脚等），而 `HomeView.vue` 作为路由匹配的组件会被渲染到 `App.vue` 中的 `<router-view>` 部分。
+
+假设你的 `App.vue` 可能长得像这样：
+
+```html
+<template>
+  <div id="app">
+    <!-- 全局布局 -->
+    <header>Header Content</header>
+    
+    <!-- Router-view 渲染当前路由对应的组件 -->
+    <router-view></router-view>  <!-- 这里会渲染 HomeView.vue 或其他路由组件 -->
+    
+    <footer>Footer Content</footer>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  // 可能有其他逻辑
+}
+</script>
+```
+
+然后，`HomeView.vue` 是通过 Vue Router 在 `App.vue` 中的 `<router-view>` 渲染的：
+
+```html
+<template>
+  <div>
+    <h1>Home Page</h1>
+    <p>Welcome to the Home Page!</p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeView',
+}
+</script>
+```
+
+
+
+
+-------------------
+
 `<router-view/>` 是 **Vue Router** 提供的一个特殊组件，用于渲染匹配到的路由组件。在 Vue.js 中，`Vue Router` 是一个官方的路由管理库，主要用于在单页面应用（SPA）中管理不同的视图和页面之间的切换。
 
 ### 工作原理：
