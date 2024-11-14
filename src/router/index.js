@@ -37,6 +37,56 @@ const routes = [
     path: '/example02/test4',
     name: 'example02_test4',
     component: () => import('../examples/example02/test4.vue')
+  },
+  {
+    path: '/example03/test1',
+    name: 'example03_test1',
+    component: () => import('../examples/example03/test1.vue')
+  },
+  {
+    path: '/example03/test2',
+    name: 'example03_test2',
+    component: () => import('../examples/example03/test2.vue')
+  },
+  {
+    path: '/example03/test3',
+    name: 'example03_test3',
+    component: () => import('../examples/example03/test3.vue')
+  },
+  {
+    path: '/example03/App',
+    name: 'example03_app',
+    component: () => import('../examples/example03/App.vue')
+  },
+  {
+    path: '/example03/el_popover1',
+    name: 'example03_el_popover1',
+    component: () => import('../examples/example03/el_popover1.vue')
+  },
+  {
+    path: '/example03/el_popover2',
+    name: 'example03_el_popover2',
+    component: () => import('../examples/example03/el_popover2.vue')
+  },
+  {
+    path: '/example04/test1',
+    name: 'example04_test1',
+    component: () => import('../examples/example04/test1.vue')
+  },
+  {
+    path: '/example04/test2',
+    name: 'example04_test2',
+    component: () => import('../examples/example04/test2.vue')
+  },
+  {
+    path: '/example05/test1',
+    name: 'example05_test1',
+    component: () => import('../examples/example05/test1.vue')
+  },
+  {
+    path: '/example05/test2',
+    name: 'example05_test2',
+    component: () => import('../examples/example05/test2.vue')
   }
 ]
 
