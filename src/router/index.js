@@ -105,6 +105,12 @@ const routes = [
     name: 'example06_imgtest',
     component: () => import('../examples/example06/imgtest.vue')
 
+  },
+  {
+    path: '/example07/Box',
+    name: 'example07_Box',
+    component: () => import('../examples/example07/Box.vue')
+
   }
 ]
 
