@@ -2,6 +2,27 @@
 
 `GoodsDetails.vue`,`GoodsList.vue`
 
+该案例路由配置：
+```js
+  {
+    path: '/example06/GoodsList',
+    name: 'example06_GoodsList',
+    component: () => import('../examples/example06/GoodsList.vue')
+
+  },
+  {
+    path: '/example06/GoodsDetails',
+    name: 'example06_GoodsDetails',
+    component: () => import('../examples/example06/GoodsDetails.vue')
+
+  }
+```
+
+图片存放位置:
+
+![image](./image.png)
+
+
 # 介绍
 
 
@@ -368,4 +389,6 @@ export default {
 1. 如果你的图片放在 `public/images/` 目录下，直接在 `product_picture` 字段中使用相对路径（例如：`/images/product1.jpg`）。
 2. 如果图片在 `src/assets/` 目录下，可以使用 `require` 动态加载图片，确保 Webpack 能处理这些图片。
 3. 使用 `<img :src="item.product_picture" />` 动态绑定图片路径，确保商品图片正确显示。
+
+
 
