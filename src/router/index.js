@@ -87,6 +87,24 @@ const routes = [
     path: '/example05/test2',
     name: 'example05_test2',
     component: () => import('../examples/example05/test2.vue')
+  },
+  {
+    path: '/example06/GoodsList',
+    name: 'example06_GoodsList',
+    component: () => import('../examples/example06/GoodsList.vue')
+
+  },
+  {
+    path: '/example06/GoodsDetails',
+    name: 'example06_GoodsDetails',
+    component: () => import('../examples/example06/GoodsDetails.vue')
+
+  },
+  {
+    path: '/example06/imgtest',
+    name: 'example06_imgtest',
+    component: () => import('../examples/example06/imgtest.vue')
+
   }
 ]
 
