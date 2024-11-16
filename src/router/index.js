@@ -123,6 +123,12 @@ const routes = [
     name: 'example08_test2',
     component: () => import('../examples/example08/test2.vue')
 
+  },
+  {
+    path: '/example07/Home',
+    name: 'example07_Home',
+    component: () => import('../examples/example07/Home.vue')
+
   }
 ]
 
