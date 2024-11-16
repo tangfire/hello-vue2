@@ -1,5 +1,5 @@
 <template>
-    <MyMenu :val="['1', '2']" @from-child="getChildMsg">
+    <MyMenu :val="['1','2']" @from-child="getChildMsg">
       <template v-slot:1>
         <span>热门</span>
       </template>

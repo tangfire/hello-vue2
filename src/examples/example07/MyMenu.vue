@@ -16,7 +16,7 @@ export default {
   name: 'MyMenu',
   data () {
     return {
-      activeClass: '1' // 默认激活的分类，确保为字符串类型以匹配传入的val值
+      activeClass: '1' // 默认激活的分类，确保为字符串类型以匹配传入的val值(注意，这里一定要是字符串类型，如果是数字类型，就会跟传入的数组['1','2']匹配不上)
     }
   },
   methods: {
