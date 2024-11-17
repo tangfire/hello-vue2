@@ -139,6 +139,11 @@ const routes = [
     path: '/example09/ParentComponent',
     name: 'example09_ParentComponent',
     component: () => import('../examples/example09/ParentComponent.vue')
+  },
+  {
+    path: '/example10/parent',
+    name: 'example10_parent',
+    component: () => import('../examples/example10/parent.vue')
   }
 ]
 
