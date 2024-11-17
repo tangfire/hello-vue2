@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow: auto; 示例</title>
+  <style>
+    /* 设置容器的尺寸 */
+    .container {
+      width: 300px; /* 宽度300px */
+      height: 200px; /* 高度200px */
+      border: 1px solid #ccc; /* 为容器添加边框 */
+      padding: 10px;
+      overflow: auto; /* 当内容超出容器时，显示滚动条 */
+    }
+
+    /* 模拟一些内容 */
+    .content {
+      height: 500px; /* 内容的高度大于容器高度 */
+      background-color: #f0f0f0;
+    }
+
+    .content p {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="content">
+      <p>这是第1段内容。</p>
+      <p>这是第2段内容。</p>
+      <p>这是第3段内容。</p>
+      <p>这是第4段内容。</p>
+      <p>这是第5段内容。</p>
+      <p>这是第6段内容。</p>
+      <p>这是第7段内容。</p>
+    </div>
+  </div>
+
+</body>
+</html>
