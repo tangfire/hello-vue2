@@ -144,6 +144,11 @@ const routes = [
     path: '/example10/parent',
     name: 'example10_parent',
     component: () => import('../examples/example10/parent.vue')
+  },
+  {
+    path: '/example11/markdown',
+    name: 'example11_markdown',
+    component: () => import('../examples/example11/markdown.vue')
   }
 ]
 
