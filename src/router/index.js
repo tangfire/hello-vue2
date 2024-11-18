@@ -149,6 +149,11 @@ const routes = [
     path: '/example11/markdown',
     name: 'example11_markdown',
     component: () => import('../examples/example11/markdown.vue')
+  },
+  {
+    path: '/example13/login',
+    name: 'example13_login',
+    component: () => import('../examples/example13/login.vue')
   }
 
 ]
