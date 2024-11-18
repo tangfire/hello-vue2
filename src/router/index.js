@@ -150,6 +150,7 @@ const routes = [
     name: 'example11_markdown',
     component: () => import('../examples/example11/markdown.vue')
   }
+
 ]
 
 const router = new VueRouter({
