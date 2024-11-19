@@ -8,7 +8,7 @@ module.exports = defineConfig({
       .test(/\.md$/)
       .use('raw-loader')
       .loader('raw-loader')
-      .end();
+      .end()
   },
   devServer: {
     port: 8081 // 修改为你想要的端口号

@@ -154,6 +154,11 @@ const routes = [
     path: '/example13/login',
     name: 'example13_login',
     component: () => import('../examples/example13/login.vue')
+  },
+  {
+    path: '/example13/form',
+    name: 'example13_form',
+    component: () => import('../examples/example13/form.vue')
   }
 
 ]
