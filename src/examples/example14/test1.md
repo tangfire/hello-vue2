@@ -13,7 +13,7 @@
 
 #### `App.vue`
 
-```vue
+```js
 <template>
   <div id="app">
     <h1>购物车</h1>

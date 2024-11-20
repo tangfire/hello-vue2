@@ -45,7 +45,7 @@ export default {
     // 计算总价的计算属性
     totalPrice () {
       return this.cartItems.reduce((total, item) => {
-        return total + this.discountedPrice(item)
+        return total + this.discountedPrice(item) * item.quantity // 乘上数量
       }, 0)
     },
 
