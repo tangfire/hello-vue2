@@ -313,3 +313,50 @@ checkPass: [
 ### 总结：
 - `this.$refs.ruleForm.validateField('checkPass')` 触发了 `checkPass` 字段的验证。
 - 由于 `checkPass` 字段的验证规则是 `validatePass2`，所以调用 `validateField` 会触发 `validatePass2` 进行验证。
+
+
+----------------------------------
+
+# 问:
+
+当 `submitForm` 方法被触发时，`this.$refs[formName].validate()` 会验证所有表单项（根据定义的`rules`），并将验证结果传递给回调函数中的 `valid` 参数,如果`rules`定义的规则都通过了，就会返回`true`，是吗？？？
+
+# 答:
+
+是的，你的理解是正确的。当 `submitForm` 方法被触发时，`this.$refs[formName].validate()` 会验证所有表单项（根据定义的 `rules`），并将验证结果传递给回调函数中的 `valid` 参数。
+
+如果所有的验证规则都通过了（即每个表单项的验证器都返回 `callback()` 或没有错误信息），`valid` 的值就会是 `true`，表示表单验证成功。如果有任何一个验证规则失败（例如某个字段的验证未通过），`valid` 的值会是 `false`，表示表单验证失败。
+
+在你的代码中：
+
+- `rules` 定义了每个表单项（如 `pass`、`checkPass`、`age`）的验证规则。
+- 这些验证规则使用了自定义的 `validator` 函数（如 `validatePass`、`validatePass2` 和 `checkAge`），并设置了触发时机为 `blur`，即失去焦点时进行验证。
+
+具体来说：
+
+- `validatePass` 用来验证密码是否为空，并且当 `checkPass` 也有值时，会验证确认密码字段（`checkPass`）是否一致。
+- `validatePass2` 用来验证确认密码（`checkPass`）是否为空以及是否和密码一致。
+- `checkAge` 用来验证年龄是否为空、是否为数字并且是否大于或等于 18 岁。
+
+### 工作流程：
+1. 当用户点击 "提交" 按钮时，`submitForm` 方法会被调用，触发表单验证。
+2. `this.$refs[formName].validate()` 会依次验证表单中每个字段的规则（`rules` 中定义的）。
+3. 如果所有规则都通过，`valid` 就会是 `true`，表示表单验证成功，执行 `alert('submit!')`。
+4. 如果有任何一个规则没有通过，`valid` 会是 `false`，控制台会输出 `'error submit!!'`，并且表单验证失败。
+
+### 代码片段：
+```javascript
+submitForm (formName) {
+  this.$refs[formName].validate((valid) => {
+    if (valid) {
+      alert('submit!')  // 所有验证通过
+    } else {
+      console.log('error submit!!')  // 任何验证失败
+      return false
+    }
+  })
+},
+```
+
+### 总结：
+`valid` 的值是根据你定义的验证规则（`rules`）和每个字段的输入值来动态计算的。如果所有字段的验证规则都通过，`valid` 会是 `true`，否则是 `false`。
