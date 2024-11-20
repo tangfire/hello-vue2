@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalStorage 示例</title>
+</head>
+<body>
+  <h1>登录页面</h1>
+  <form id="loginForm">
+    <label for="username">用户名：</label>
+    <input type="text" id="username" placeholder="输入用户名" required><br><br>
+    <button type="submit">登录</button>
+  </form>
+
+  <div id="greeting" style="display: none;">
+    <h2>欢迎回来，<span id="user"></span>!</h2>
+    <button onclick="logout()">退出登录</button>
+  </div>
+
+  <script>
+    // 检查是否已登录，如果已登录，显示欢迎信息
+    window.onload = function () {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        document.getElementById('greeting').style.display = 'block';
+        document.getElementById('user').textContent = storedUser;
+      } else {
+        document.getElementById('loginForm').style.display = 'block';
+      }
+    };
+
+    // 登录表单提交事件
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+
+      // 存储用户信息到 localStorage
+      localStorage.setItem('user', username);
+
+      // 隐藏登录表单，显示欢迎信息
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('greeting').style.display = 'block';
+      document.getElementById('user').textContent = username;
+    });
+
+    // 退出登录，清除 localStorage 中的数据
+    function logout() {
+      localStorage.removeItem('user');  // 清除存储的用户信息
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('greeting').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
