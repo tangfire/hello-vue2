@@ -159,6 +159,16 @@ const routes = [
     path: '/example13/form',
     name: 'example13_form',
     component: () => import('../examples/example13/form.vue')
+  },
+  {
+    path: '/example14/test1',
+    name: 'example14_test1',
+    component: () => import('../examples/example14/test1.vue')
+  },
+  {
+    path: '/example14/test2',
+    name: 'example14_test2',
+    component: () => import('../examples/example14/test2.vue')
   }
 
 ]
