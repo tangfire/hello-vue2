@@ -179,6 +179,21 @@ const routes = [
     path: '/example15/Parent',
     name: 'example15_Parent',
     component: () => import('../examples/example15/Parent.vue')
+  },
+  {
+    path: '/example16/test1',
+    name: 'example16_test1',
+    component: () => import('../examples/example16/test1.vue')
+  },
+  {
+    path: '/example16/test2',
+    name: 'example16_test2',
+    component: () => import('../examples/example16/test2.vue')
+  },
+  {
+    path: '/example16/test3',
+    name: 'example16_test3',
+    component: () => import('../examples/example16/test3.vue')
   }
 
 ]
